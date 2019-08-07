@@ -1,6 +1,7 @@
 class Pub
 
-  attr_reader :name, :till, :drinks
+  attr_reader :name, :drinks
+  attr_accessor :till
 
   def initialize(name, till, drinks)
     @name = name
@@ -11,6 +12,20 @@ class Pub
 
   def reduce_drinks()
     return @drinks.pop
+  end
+
+  def increase_value_of_till(drink)
+    @till += drink.price
+  end
+
+  def checks_customer_over_18(customer)
+    return true if customer.age >= 18
+    return false if customer.age < 18
+  end
+
+  def customer_is_too_drunk(customer)
+    return true if customer.drunkenness_level >= 10
+    return false if customer.drunkenness_level < 10
   end
 
 end
