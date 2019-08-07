@@ -15,6 +15,7 @@ class PubTest < MiniTest::Test
 
     @customer1 = Customer.new("Ted", 100, 19, 5)
     @customer2 = Customer.new("Bertha", 100, 15, 5)
+    @customer3 = Customer.new("Todd", 130, 15, 15)
   end
 
   def test_name_of_pub
@@ -49,6 +50,15 @@ class PubTest < MiniTest::Test
 
   def test_checks_customer_over_18__true
     assert_equal(false, @pub1.checks_customer_over_18(@customer2))
+  end
+
+  #tests whether pub refuses service based on drunkenness level (10 or above)
+  def test_checks_customer_is_too_drunk__true
+    assert_equal(true, @pub1.customer_is_too_drunk(@customer3))
+  end
+
+  def test_checks_customer_is_too_drunk__false
+    assert_equal(false, @pub1.customer_is_too_drunk(@customer1))
   end
 
 end

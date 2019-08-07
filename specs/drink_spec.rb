@@ -19,7 +19,7 @@ class DrinkTest < MiniTest::Test
     assert_equal(1.50, @drink1.price())
   end
 
-#to test whether the alcohol level of a given drink is what we expect. it would be testing a getter method or an attribute-read attribute.
+  #to test whether the alcohol level of a given drink is what we expect. it would be testing a getter method or an attribute-read attribute.
   def test_alcohol_level_of_drink
     assert_equal(5, @drink3.alcohol_level())
   end

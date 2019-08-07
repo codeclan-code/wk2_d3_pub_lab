@@ -15,8 +15,13 @@ class Customer
   end
 
   def reduce_value_of_wallet(drink)
-  #  binding.pry
+    #  binding.pry
     @wallet -= drink.price
   end
+
+  def customer_gets_drunker_when_they_buy_drink(drink)
+    @drunkenness_level += drink.alcohol_level
+  end
+
 
 end
