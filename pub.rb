@@ -9,5 +9,8 @@ class Pub
 
   end
 
+  def reduce_drinks()
+    return @drinks.pop
+  end
 
 end
